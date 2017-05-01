@@ -1,0 +1,46 @@
+list1 = []
+teams = []
+connections = []
+
+with open('assignment2.txt') as f:
+    for line in f:
+        line = line.split()
+
+        list1.append(line)
+
+print (list1)
+
+
+for i in range(len(list1)):
+
+    if list1[i][0] not in teams:
+        k = list1[i][0]
+        teams.append(k)
+    if list1[i][1] not in teams:
+        k = list1[i][1]
+        teams.append(k)
+
+print (teams)
+
+'''for i in range(len(teams)):
+    for j in range(len(list1)):
+        if i == list1[j][0]:
+            k = list[j][1]
+            connections.append(k)
+            print (connections)
+        if i == list[j][1]:
+                k = list[j][0]
+                connections.append(k)'''
+for q, a in zip(teams, list1):
+
+    if q == list1[a][0]:
+        k = list1[a][1]
+        connections.append(k)
+    if q == list1[a][1]:
+        m = list1[a][0]
+        connections.append(k)
+
+
+print (connections)
+
+
